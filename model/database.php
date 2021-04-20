@@ -17,6 +17,7 @@
 
                 //Heorku
                 if(!empty(getenv('JAWSDB_URL'))){
+                    echo "HERE";
                     try {
                         $dbparts = parse_url(self::$url);
 
@@ -35,6 +36,7 @@
                     }
                 }
                 else {
+                    echo "fHERE";
                     try {
                         self::$db = new PDO(self::$dsn,
                             self::$username);
