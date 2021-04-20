@@ -33,8 +33,9 @@
                         echo "db";
                         // set the PDO error mode to exception
                         self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        echo "er";
                     } catch (PDOException $e) {
-                        echo "ERROR" + $e->getMessage();
+                        echo "ERROR" . $e->getMessage();
                         $error = "Database Error: ";
                         $error .= $e->getMessage();
                         include('../view/error.php');
