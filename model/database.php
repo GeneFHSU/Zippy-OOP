@@ -21,12 +21,12 @@
                         $dbparts = parse_url($url);
 
                         $hostname = $dbparts['host'];
-                        $username = $dbparts['user'];
+                        self::$username = $dbparts['user'];
                         $password = $dbparts['pass'];
                         $database = ltrim($dbparts['path'],'/');
-                        $db = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+                        self::$db = new PDO("mysql:host=$hostname;dbname=$database", self::$username, $password);
                         // set the PDO error mode to exception
-                        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     } catch (PDOException $e) {
                         $error = "Database Error: ";
                         $error .= $e->getMessage();
@@ -38,6 +38,7 @@
                     try {
                         self::$db = new PDO(self::$dsn,
                             self::$username);
+                        self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     } catch (PDOException $e) {
                         $error = "Database Error: ";
                         $error .= $e->getMessage();
