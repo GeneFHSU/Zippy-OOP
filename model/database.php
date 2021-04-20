@@ -22,7 +22,7 @@
                         $dbparts = parse_url(self::$url);
 
                         $hostname = $dbparts['host'];
-                        echo "host".$hostname;
+                        echo "host".$hostname."|";
                         self::$username = $dbparts['user'];
                         echo "user".self::$username;
                         $password = $dbparts['pass'];
