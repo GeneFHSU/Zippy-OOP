@@ -22,13 +22,13 @@
                         $dbparts = parse_url(self::$url);
 
                         $hostname = $dbparts['host'];
-                        echo "host";
+                        echo "host".$hostname;
                         self::$username = $dbparts['user'];
-                        echo "user";
+                        echo "user".self::$username;
                         $password = $dbparts['pass'];
-                        echo "pass";
+                        echo "pass".$password;
                         $database = ltrim($dbparts['path'],'/');
-                        echo "db";
+                        echo "db".$database;
                         self::$db = new PDO("mysql:host=$hostname;dbname=$database", self::$username, $password);
                         echo "db";
                         // set the PDO error mode to exception
