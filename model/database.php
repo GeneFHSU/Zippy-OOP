@@ -9,7 +9,7 @@
         private static $url;//Heroku
 
         private function __construct(){
-            $url = getenv('JAWSDB_URL');
+            self::$url = getenv('JAWSDB_URL');
         }
 
         public static function getDB(){
