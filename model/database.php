@@ -17,7 +17,8 @@
 
                 //Heorku
                 if(!empty(getenv('JAWSDB_URL'))){
-                    echo "HERE";
+                    $url = getenv('JAWSDB_URL');
+                    echo "HERE".$url;
                     try {
                         $dbparts = parse_url(self::$url);
 
