@@ -18,7 +18,7 @@
                 //Heorku
                 if(!empty(getenv('JAWSDB_URL'))){
                     try {
-                        $dbparts = parse_url($url);
+                        $dbparts = parse_url(self::$url);
 
                         $hostname = $dbparts['host'];
                         self::$username = $dbparts['user'];
