@@ -22,13 +22,18 @@
                         $dbparts = parse_url(self::$url);
 
                         $hostname = $dbparts['host'];
+                        echo "host";
                         self::$username = $dbparts['user'];
+                        echo "user";
                         $password = $dbparts['pass'];
+                        echo "pass";
                         $database = ltrim($dbparts['path'],'/');
                         self::$db = new PDO("mysql:host=$hostname;dbname=$database", self::$username, $password);
+                        echo "db";
                         // set the PDO error mode to exception
                         self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     } catch (PDOException $e) {
+                        echo "ERROR";
                         $error = "Database Error: ";
                         $error .= $e->getMessage();
                         include('../view/error.php');
