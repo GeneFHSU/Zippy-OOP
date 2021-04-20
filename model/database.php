@@ -28,12 +28,13 @@
                         $password = $dbparts['pass'];
                         echo "pass";
                         $database = ltrim($dbparts['path'],'/');
+                        echo "db";
                         self::$db = new PDO("mysql:host=$hostname;dbname=$database", self::$username, $password);
                         echo "db";
                         // set the PDO error mode to exception
                         self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     } catch (PDOException $e) {
-                        echo "ERROR";
+                        echo "ERROR" + $e->getMessage();
                         $error = "Database Error: ";
                         $error .= $e->getMessage();
                         include('../view/error.php');
