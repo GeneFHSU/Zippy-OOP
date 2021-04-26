@@ -2,10 +2,10 @@
     include('header.php'); 
     
     //unset variable(s)
-    /* if (isset($_SESSION['userid'])) { */
-        //$firstname = $_SESSION['userid'];
+    if (isset($_SESSION['userid'])) {
+        $firstname = $_SESSION['userid'];
         unset($_SESSION['userid']);
-    /* } */
+    }
     //end session
     session_destroy();
     //delete session cookie

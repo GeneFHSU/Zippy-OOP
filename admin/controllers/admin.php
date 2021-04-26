@@ -14,7 +14,7 @@
 
             //Put the if statement that calls the username_exists() function in the /admin/controllers/admin.php file
             // inside the register action immediately after the valid_registration() function is called.
-            if (self::username_exists($username)) {
+            if (AdminDB::username_exists($username)) {
                 array_push($errors, "The username you entered is already taken.");
             }
             // errors exist or success
