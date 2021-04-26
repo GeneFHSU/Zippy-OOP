@@ -95,7 +95,7 @@ INSERT INTO vehicles(year,model,price,type_id,class_id,make_id) VALUES (2015,'Fu
 INSERT INTO vehicles(year,model,price,type_id,class_id,make_id) VALUES (2014,'XTS',19999,3,3,3);
 
 -- Fill administrator table
-INSERT INTO administrators(username,password) VALUES ('Zippy123', 'Zippy123');
+INSERT INTO administrators(username,password) VALUES ('Zippy123', '$2y$10$cJrJbR4URdOxgqB4okvqC.HU1DprRotuA1ss8VOjrHfkC6trslOei');
 
 -- create user named root without a password
 CREATE USER IF NOT EXISTS 'root'@'localhost';
